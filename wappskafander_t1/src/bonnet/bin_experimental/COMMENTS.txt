@@ -1,0 +1,13 @@
+===========================================================================
+=======================  Experimental Scripts  ============================
+===========================================================================
+
+The content of this folder is only for people, who know the 
+inner workings of wappskafander_t1 startup scripts implementation.
+
+There might be even a risk that the scripts in this folder 
+corrupt the copy of the wappskafander_t1 deployment deliverables.
+
+Thank You for reading this text. 
+
+===========================================================================

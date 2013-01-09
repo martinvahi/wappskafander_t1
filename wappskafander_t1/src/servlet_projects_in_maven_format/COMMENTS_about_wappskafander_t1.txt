@@ -1,0 +1,49 @@
+#!/bin/bash
+XXX=$(cat<< 'txt1' #=======================================================
+========  wappskafander_t1 Specific Structure of this Folder  =============
+===========================================================================
+
+This folder is expected to contain servlet project folders.
+The server starup scripts look for WAR files from 
+
+<project folder name>
+  |
+  +--target
+       |
+       +--<WAR-file name>
+
+One way to add/create a project folder is by executing this file 
+with Bash.
+
+txt1
+)#-------------------------------------------------------------------------
+
+S_INITIAL_WORKING_DIRECTORY="`pwd`"
+S_PATH_TO_THIS_FOLDER="$( cd -P "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+cd $S_PATH_TO_THIS_FOLDER # should the working directory differ
+
+echo ""
+if [ "$1" == "" ]; then
+    read -p "Please enter folder name? " S_FOLDERNAME
+    echo ""
+else
+    S_FOLDERNAME="$1"
+fi
+
+if [ -e ./$S_FOLDERNAME ]; then
+    echo "A folder or file named \"$S_FOLDERNAME\" already exists. Skipping project creation. "
+    echo ""
+    exit # to avoid overwriting manually edited projects
+fi
+
+
+mvn archetype:generate -DgroupId=com.mycompany.app -DartifactId=$S_FOLDERNAME -DarchetypeArtifactId=maven-archetype-webapp -DinteractiveMode=false
+
+# The WAR-files can be compiled, built, by executing:
+
+cd $S_FOLDERNAME
+mvn package
+
+cd $S_INITIAL_WORKING_DIRECTORY # just for correctness
+#==========================================================================
+

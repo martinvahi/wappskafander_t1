@@ -320,7 +320,7 @@ end # Kibuvits_spider_t1
 
 #--------------------------------------------------------------------------
 
-
+=begin
 class Kibuvits_graph_crawler_depthfirst_t1 < Kibuvits_spider_t1
 
    # The constructor arguments match with the base class
@@ -413,6 +413,7 @@ class Kibuvits_graph_crawler_depthfirst_t1 < Kibuvits_spider_t1
    end # choose_next_vertex_and_determine_whether_to_pause
 
 end # class Kibuvits_graph_crawler_depthfirst_t1
+=end
 
 #--------------------------------------------------------------------------
 

@@ -38,14 +38,14 @@
 #==========================================================================
 # Common initialization stuff:
 
+require 'pathname'
+
 if !defined? KIBUVITS_HOME
-   x=ENV['KIBUVITS_HOME']
-   KIBUVITS_HOME=x if (x!=nil and x!="")
+   KIBUVITS_HOME=Pathname.new(__FILE__).realpath.parent.parent.to_s
 end # if
 
 KIBUVITS_RUBY_LIBRARY_IS_AVAILABLE=true if !defined? KIBUVITS_RUBY_LIBRARY_IS_AVAILABLE
 
-require 'pathname'
 # The difference between the APPLICATION_STARTERRUBYFILE_PWD and the
 # working directory is that if a script that uses the Kibuvits Ruby Library
 # has a path of /tmp/explanation/x.rb and it s called by:
@@ -115,13 +115,6 @@ KIBUVITS_s_VERSION="kibuvits_"+KIBUVITS_s_NUMERICAL_VERSION.to_s if !defined? KI
 # use the KRL are left an opportunity to overwrite it or
 # self-declare it.
 # KIBUVITS_TMP_FOLDER_PATH=ENV['HOME'].to_s+"/tmp"
-
-if !defined? RUBYPATH
-   x=ENV['RUBYPATH']
-   RUBYPATH=x if (x!=nil and x!="")
-end # if
-
-KIBUVITS_s_CMD_RUBY="cd "+RUBYPATH+" ; ruby -Ku "
 
 KIBUVITS_b_DEBUG=true if !defined? KIBUVITS_b_DEBUG
 
@@ -240,6 +233,15 @@ $kibuvits_lc_emptyarray=Array.new.freeze
 $kibuvits_s_language=$kibuvits_lc_uk # application level i18n setting.
 x=ENV["KIBUVITS_LANGUAGE"]
 $kibuvits_s_language=x if (x!=nil and x!="")
+#--------------------------------------------------------------------------
+
+if !defined? KIBUVITS_s_CMD_RUBY
+   kibuvits_tmpvar_s_rbpath=`which ruby`
+   kibuvits_tmpvar_s_rbpath.sub!(/[\n\r]$/,"")
+   kibuvits_tmpvar_s_rbpath=Pathname.new(kibuvits_tmpvar_s_rbpath).realpath.parent.to_s
+   KIBUVITS_s_CMD_RUBY="cd "<<kibuvits_tmpvar_s_rbpath<<" ; ruby -Ku "
+end # if
+
 #--------------------------------------------------------------------------
 
 def kibuvits_s_exception_2_stacktrace(e)
@@ -1266,6 +1268,20 @@ end # kibuvits_call_by_ar_of_args
 
 #--------------------------------------------------------------------------
 
+# An example:
+#
+# ob_func=kibuvits_dec_lambda do |x|
+#     puts "Hello "+x.to_s+" !"
+#     end # block
+# ob_func.call("handsome")
+#
+def kibuvits_dec_lambda(&block)
+   ob_block=block
+   return ob_block
+end # kibuvits_dec_lambda
+
+#--------------------------------------------------------------------------
+
 #=========---KRL-selftests-infrastructure-start---=========================
 
 # The .selftest methods depend on this function. This function is
@@ -1281,7 +1297,6 @@ def kibuvits_testeval(a_binding,teststring)
    "end # try-catch\n"
    eval(s_script,a_binding)
 end #kibuvits_testeval
-
 
 # Returns a boolean value.
 def kibuvits_block_throws

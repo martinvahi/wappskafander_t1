@@ -824,23 +824,11 @@ class Kibuvits_fs
             end # if
             return
          end # if
-         File.chmod(700,s_fp)
-         if (File.writable? s_fp)&&(File.readable? s_fp)&&(File.executable? s_fp)
-            if File.directory? s_fp
-               ar=Dir.glob(s_fp+$kibuvits_lc_slashstar)
-               chmod_recursive_secure_7(ar)
-            end # if
-            return
-         end # if
-         File.chmod(770,s_fp)
-         if (File.writable? s_fp)&&(File.readable? s_fp)&&(File.executable? s_fp)
-            if File.directory? s_fp
-               ar=Dir.glob(s_fp+$kibuvits_lc_slashstar)
-               chmod_recursive_secure_7(ar)
-            end # if
-            return
-         end # if
-         File.chmod(777,s_fp)
+         # If the owner of the current process is not the
+         # owner of the file and the file had previously
+         # a permission of 0770, then "chmod 0700 filename"
+         # would lock the user out.
+         File.chmod(0777,s_fp) # access descrition must contain 4 digits, or a flaw is introduced
          if (File.writable? s_fp)&&(File.readable? s_fp)&&(File.executable? s_fp)
             if File.directory? s_fp
                ar=Dir.glob(s_fp+$kibuvits_lc_slashstar)

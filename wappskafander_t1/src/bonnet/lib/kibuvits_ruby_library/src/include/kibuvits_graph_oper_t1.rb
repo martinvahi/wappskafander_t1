@@ -43,10 +43,10 @@ end # if
 
 require "monitor"
 if defined? KIBUVITS_HOME
-   require  KIBUVITS_HOME+"/include/kibuvits_htoper.rb"
-   require  KIBUVITS_HOME+"/include/kibuvits_graph.rb"
-   require  KIBUVITS_HOME+"/include/kibuvits_IDstamp_registry_t1.rb"
-   require  KIBUVITS_HOME+"/include/kibuvits_arraycursor_t1.rb"
+   require  KIBUVITS_HOME+"/src/include/kibuvits_htoper.rb"
+   require  KIBUVITS_HOME+"/src/include/kibuvits_graph.rb"
+   require  KIBUVITS_HOME+"/src/include/kibuvits_IDstamp_registry_t1.rb"
+   require  KIBUVITS_HOME+"/src/include/kibuvits_arraycursor_t1.rb"
 else
    require  "kibuvits_htoper.rb"
    require  "kibuvits_graph.rb"

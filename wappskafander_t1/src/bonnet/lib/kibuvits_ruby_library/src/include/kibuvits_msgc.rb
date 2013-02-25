@@ -46,11 +46,11 @@ KIBUVITS_MSGC_INCLUDED=true if !defined? KIBUVITS_MSGC_INCLUDED
 
 require "monitor"
 if defined? KIBUVITS_HOME
-   require  KIBUVITS_HOME+"/include/kibuvits_boot.rb"
-   require  KIBUVITS_HOME+"/include/kibuvits_GUID_generator.rb"
-   require  KIBUVITS_HOME+"/include/kibuvits_ProgFTE.rb"
+   require  KIBUVITS_HOME+"/src/include/kibuvits_boot.rb"
+   require  KIBUVITS_HOME+"/src/include/kibuvits_GUID_generator.rb"
+   require  KIBUVITS_HOME+"/src/include/kibuvits_ProgFTE.rb"
    if !(defined? KIBUVITS_SZR_INCLUDED)
-      require KIBUVITS_HOME+"/include/incomplete/kibuvits_szr.rb"
+      require KIBUVITS_HOME+"/src/include/incomplete/kibuvits_szr.rb"
    end # if
 else
    require  "kibuvits_boot.rb"

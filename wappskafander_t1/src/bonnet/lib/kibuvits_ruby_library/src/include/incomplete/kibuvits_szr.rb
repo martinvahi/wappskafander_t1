@@ -50,10 +50,10 @@ end # if
 require "monitor"
 if defined? KIBUVITS_HOME
    if !(defined? KIBUVITS_MSGC_INCLUDED)
-      require  KIBUVITS_HOME+"/include/kibuvits_msgc.rb"
+      require  KIBUVITS_HOME+"/src/include/kibuvits_msgc.rb"
    end # if
-   require  KIBUVITS_HOME+"/include/kibuvits_ProgFTE.rb"
-   require  KIBUVITS_HOME+"/include/kibuvits_str.rb"
+   require  KIBUVITS_HOME+"/src/include/kibuvits_ProgFTE.rb"
+   require  KIBUVITS_HOME+"/src/include/kibuvits_str.rb"
 else
    require  "kibuvits_boot.rb"
    if !(defined? KIBUVITS_MSGC_INCLUDED)

@@ -42,9 +42,9 @@ if !defined? KIBUVITS_HOME
 end # if
 
 if defined? KIBUVITS_HOME
-   require  KIBUVITS_HOME+"/include/kibuvits_msgc.rb"
-   require  KIBUVITS_HOME+"/include/kibuvits_ix.rb"
-   require  KIBUVITS_HOME+"/include/kibuvits_str.rb"
+   require  KIBUVITS_HOME+"/src/include/kibuvits_msgc.rb"
+   require  KIBUVITS_HOME+"/src/include/kibuvits_ix.rb"
+   require  KIBUVITS_HOME+"/src/include/kibuvits_str.rb"
 else
    require  "kibuvits_msgc.rb"
    require  "kibuvits_ix.rb"

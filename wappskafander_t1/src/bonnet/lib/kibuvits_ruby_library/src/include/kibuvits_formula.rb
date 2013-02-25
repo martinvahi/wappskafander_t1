@@ -43,9 +43,9 @@ end # if
 
 require "monitor"
 if defined? KIBUVITS_HOME
-   require  KIBUVITS_HOME+"/include/kibuvits_msgc.rb"
-   require  KIBUVITS_HOME+"/include/kibuvits_GUID_generator.rb"
-   require  KIBUVITS_HOME+"/include/kibuvits_ix.rb"
+   require  KIBUVITS_HOME+"/src/include/kibuvits_msgc.rb"
+   require  KIBUVITS_HOME+"/src/include/kibuvits_GUID_generator.rb"
+   require  KIBUVITS_HOME+"/src/include/kibuvits_ix.rb"
 else
    require  "kibuvits_msgc.rb"
    require  "kibuvits_GUID_generator.rb"

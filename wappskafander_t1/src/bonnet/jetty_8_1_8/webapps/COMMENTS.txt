@@ -1,0 +1,7 @@
+
+
+The wappskafander_t1 scripts do the following:
+
+cd <this folder>
+ln -s ./../../../web_root ./root
+

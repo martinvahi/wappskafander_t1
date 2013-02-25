@@ -42,10 +42,10 @@ end # if
 
 require "pathname"
 if defined? KIBUVITS_HOME
-   require  KIBUVITS_HOME+"/include/kibuvits_msgc.rb"
-   require  KIBUVITS_HOME+"/include/kibuvits_str.rb"
-   require  KIBUVITS_HOME+"/bonnet/kibuvits_os_codelets.rb"
-   require  KIBUVITS_HOME+"/include/kibuvits_io.rb"
+   require  KIBUVITS_HOME+"/src/include/kibuvits_msgc.rb"
+   require  KIBUVITS_HOME+"/src/include/kibuvits_str.rb"
+   require  KIBUVITS_HOME+"/src/bonnet/kibuvits_os_codelets.rb"
+   require  KIBUVITS_HOME+"/src/include/kibuvits_io.rb"
 else
    require  "kibuvits_msgc.rb"
    require  "kibuvits_str.rb"

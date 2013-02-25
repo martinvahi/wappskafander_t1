@@ -62,27 +62,28 @@ end #apply_to_genlist
 kibuvits_home=ENV['KIBUVITS_HOME']
 b_selfwriting=(kibuvits_home!=nil and kibuvits_home!="")
 if b_selfwriting
+   KIBUVITS_HOME=kibuvits_home unless defined? KIBUVITS_HOME
+   require KIBUVITS_HOME+"/src/include/kibuvits_msgc.rb"
+   msgcs=Kibuvits_msgc_stack.new
    begin
-      KIBUVITS_HOME=kibuvits_home unless defined? KIBUVITS_HOME
-      require  kibuvits_home+"/include/kibuvits_io.rb"
-      s_mypath=Pathname.new(kibuvits_home+"/include/kibuvits_all.rb").realpath.to_s
+      require  KIBUVITS_HOME+"/src/include/kibuvits_io.rb"
+      s_mypath=Pathname.new(KIBUVITS_HOME+"/src/include/kibuvits_all.rb").realpath.to_s
       s_list_for_gem=""
       s0=""
       s1=""
       pthn=nil
-      Dir.glob(kibuvits_home+"/include/*.rb").each do |a_file_path|
+      Dir.glob(KIBUVITS_HOME+"/src/include/*.rb").each do |a_file_path|
          s_list_for_gem=apply_to_genlist(s_mypath, a_file_path,s_list_for_gem)
       end # loop
-      Dir.glob(kibuvits_home+"/include/incomplete/*.rb").each do |a_file_path|
+      Dir.glob(KIBUVITS_HOME+"/src/include/incomplete/*.rb").each do |a_file_path|
          s_list_for_gem=apply_to_genlist(s_mypath, a_file_path,s_list_for_gem)
       end # loop
-      Dir.glob(kibuvits_home+"/bonnet/*.rb").each do |a_file_path|
+      Dir.glob(KIBUVITS_HOME+"/src/bonnet/*.rb").each do |a_file_path|
          s_list_for_gem=apply_to_genlist(s_mypath, a_file_path,s_list_for_gem)
       end # loop
       s_start="SELFWRIGING_REGION_STAR"+"T"
       s_end="SELFWRIGING_REGION_EN"+"D"
       s_hay=file2str(s_mypath)
-      msgcs=Kibuvits_msgc_stack.new
       s_hay,ht_picks=Kibuvits_str.pick_by_instance(s_start,s_end,
       s_hay,msgcs)
       if msgcs.b_failure
@@ -102,7 +103,8 @@ if b_selfwriting
       # sucessfully for rewriting this file here.
       raise Exception.new("\n\nkibuvits_all.rb selfwriting failed.\n"+
       "It might be that the API of some function that the selfwriting \n"+
-      "depends on, changed. The system exception message is:\n\n"+
+      "depends on, changed. msgcs.to_s==\n"+msgcs.to_s+
+      "\n\nThe system exception message is:\n\n"+
       e.to_s) #+
    end # rescue
 else

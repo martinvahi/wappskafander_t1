@@ -42,8 +42,8 @@ end # if
 
 require "monitor"
 if defined? KIBUVITS_HOME
-   require  KIBUVITS_HOME+"/bonnet/kibuvits_os_codelets.rb"
-   require  KIBUVITS_HOME+"/include/kibuvits_shell.rb"
+   require  KIBUVITS_HOME+"/src/bonnet/kibuvits_os_codelets.rb"
+   require  KIBUVITS_HOME+"/src/include/kibuvits_shell.rb"
 else
    require  "kibuvits_os_codelets.rb"
    require  "kibuvits_shell.rb"

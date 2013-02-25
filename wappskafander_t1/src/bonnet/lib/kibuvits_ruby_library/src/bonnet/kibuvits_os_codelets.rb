@@ -43,8 +43,8 @@ end # if
 
 require "monitor"
 if defined? KIBUVITS_HOME
-   require  KIBUVITS_HOME+"/include/kibuvits_msgc.rb"
-   require  KIBUVITS_HOME+"/include/kibuvits_io.rb"
+   require  KIBUVITS_HOME+"/src/include/kibuvits_msgc.rb"
+   require  KIBUVITS_HOME+"/src/include/kibuvits_io.rb"
 else
    require  "kibuvits_msgc.rb"
    require  "kibuvits_io.rb"
@@ -303,12 +303,12 @@ class Kibuvits_os_codelets
          # cygwin uses the Linux file paths, i.e. /c/blabla, but
          # the ENV['TEMP'] gives c:/blablabla  and that breaks things.
          # the solution:
-         s_out=KIBUVITS_HOME+"/bonnet/tmp"
+         s_out=KIBUVITS_HOME+"/src/bonnet/tmp"
          # There's nothing lost with that, because KRL relies on
          # unix tools anyway, which means that on Windows the KRL runs
          # on cygwin or something like that.
       elsif s_system_name=="kibuvits_ostype_java"
-         s_out=KIBUVITS_HOME+"/bonnet/tmp"
+         s_out=KIBUVITS_HOME+"/src/bonnet/tmp"
       else
          kibuvits_throw 'System "'+s_system_name+'" is not supported.'
       end # elsif

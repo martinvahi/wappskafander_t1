@@ -43,8 +43,8 @@ end # if
 
 require "monitor"
 if defined? KIBUVITS_HOME
-   require  KIBUVITS_HOME+"/include/kibuvits_boot.rb"
-   require  KIBUVITS_HOME+"/include/kibuvits_GUID_generator.rb"
+   require  KIBUVITS_HOME+"/src/include/kibuvits_boot.rb"
+   require  KIBUVITS_HOME+"/src/include/kibuvits_GUID_generator.rb"
 else
    require  "kibuvits_boot.rb"
    require  "kibuvits_GUID_generator.rb"

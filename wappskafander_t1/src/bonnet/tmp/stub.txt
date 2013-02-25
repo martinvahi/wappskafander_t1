@@ -1,0 +1,3 @@
+
+Thei file exists for saving a folder to Git repository.
+

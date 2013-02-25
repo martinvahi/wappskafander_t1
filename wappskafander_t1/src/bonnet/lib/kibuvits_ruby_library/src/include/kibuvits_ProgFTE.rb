@@ -57,7 +57,7 @@ if defined? KIBUVITS_HOME
    # As the Kibuvits_ProgFTE is used for serialization, the
    # Kibuvits_ProgFTE  may not depend on anything else than
    # the booting code.
-   require  KIBUVITS_HOME+"/include/kibuvits_boot.rb"
+   require  KIBUVITS_HOME+"/src/include/kibuvits_boot.rb"
 else
    # To allow the Kibuvits Ruby Library (KRL) ProgFTE implantation
    # to be used without using any part of the rest of the KRL,

@@ -43,7 +43,7 @@ end # if
 
 require "monitor"
 if defined? KIBUVITS_HOME
-   require  KIBUVITS_HOME+"/include/kibuvits_str.rb"
+   require  KIBUVITS_HOME+"/src/include/kibuvits_str.rb"
 else
    require  "kibuvits_str.rb"
 end # if

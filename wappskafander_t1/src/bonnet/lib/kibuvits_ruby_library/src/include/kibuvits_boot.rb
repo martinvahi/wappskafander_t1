@@ -55,7 +55,7 @@ KIBUVITS_RUBY_LIBRARY_IS_AVAILABLE=true if !defined? KIBUVITS_RUBY_LIBRARY_IS_AV
 #
 APPLICATION_STARTERRUBYFILE_PWD=Pathname.new($0).realpath.parent.to_s if not defined? APPLICATION_STARTERRUBYFILE_PWD
 
-require KIBUVITS_HOME+"/include/kibuvits_GUID_generator.rb"
+require KIBUVITS_HOME+"/src/include/kibuvits_GUID_generator.rb"
 # The point behind the KIBUVITS_s_PROCESS_ID is that
 # different subprocesses might want to communicate
 # with each-other, but there might be different
@@ -91,7 +91,7 @@ end # if
 # The Ruby gem infrastructure requires a version that consists
 # of only numbers and dots. For library forking related
 # version checks there is another constant: KIBUVITS_s_VERSION.
-KIBUVITS_s_NUMERICAL_VERSION="1.1.0" if !defined? KIBUVITS_s_NUMERICAL_VERSION
+KIBUVITS_s_NUMERICAL_VERSION="1.2.0" if !defined? KIBUVITS_s_NUMERICAL_VERSION
 
 # The reason, why the version does not consist of only
 # numbers and points is that every application is

@@ -1,0 +1,21 @@
+===========================================================================
+=======================  Script Dependencies  =============================
+===========================================================================
+
+<something in the bin folder>
+  |
+  +--bl_entrycmd_demultiplexer.bash
+       |
+       +--bl_init_environment_variables.bash
+       |    |
+       |    +--bl_execution_platform_check.bash
+       |
+       +--<cmd start server>
+       |     |
+       |     +--bl_startup_part_x1.bash
+       |     |
+       |     +--linux_32b_i686.rb
+       |
+       +--<cmd stopserver>
+
+===========================================================================

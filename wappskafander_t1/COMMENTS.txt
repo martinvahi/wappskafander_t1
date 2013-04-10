@@ -19,12 +19,17 @@ start<the_rest_of_the_script_name> and the servlet based
 web application runs on the local machine without
 any need for doing any further installation or configuration.
 
-The wappskafander_t1 contains everything that is needed for
-running a Java servlet: copy of Java Runtime Environment,
+The wappskafander_t1 contains almost everything that is needed for
+running a Java servlet: copy of Java Runtime Environment (JRE),
 a server that wraps Java servlets, etc.
 
-The current version is supported only on 32 bit i686 compatible
-Ubuntu Linux distributions and it has been tested only on Ubuntu.
+The current version of the wappskafander_t1 is 
+supported only on i686 compatible 32bit and 64bit Ubuntu Linux 
+distributions and it has been tested only on Ubuntu.
+
+On Ubuntu (Linux) the JRE requirements get installed by
+
+    apt-get install ia32-libs
 
 If 64 bit Linux supports 32 bit Linux applications, then it
 will probably run on the 64 bit Linux, but there might be problems

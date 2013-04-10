@@ -10,7 +10,7 @@ func_init_WAPPSKAFANDER_T1_HOME
 #--------------------------------------------------------------------------
 
 S_ENTRYCMD="stop_server";
-source "$WAPPSKAFANDER_T1_HOME/src/bonnet/script_components/bl_entrycmd_demultiplexer.bash"
+source "$WAPPSKAFANDER_T1_HOME/src/bonnet/wappskafander_t1_core/script_components/bl_entrycmd_demultiplexer.bash"
 
 #==========================================================================
 

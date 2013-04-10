@@ -31,10 +31,8 @@ On Ubuntu (Linux) the JRE requirements get installed by
 
     apt-get install ia32-libs
 
-If 64 bit Linux supports 32 bit Linux applications, then it
-will probably run on the 64 bit Linux, but there might be problems
-on other 32 bit Linux distributions, for example, RedHat Fedora,
-because different distributions are compiled with different
+There might be problems on non-Ubuntu Linux distributions, for example, 
+RedHat Fedora, because different distributions are compiled with different
 versions of GCC and that might introduce binary incompatibilities.
 
 To start the server, one has to look up or change the port number in
